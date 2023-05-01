@@ -19,7 +19,7 @@ on:
 jobs:
   build:
     name: 🏗️
-    uses: ./.github/workflows/run.yml
+    uses: cassiecascade/houseplant/.github/workflows/run.yml
     with:
       command: build
       node-version: ${{ inputs.node-version }}

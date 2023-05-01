@@ -19,7 +19,7 @@ on:
 jobs:
   unit:
     name: 🧪
-    uses: ./.github/workflows/run.yml
+    uses: cassiecascade/houseplant/.github/workflows/run.yml
     with:
       command: test:unit
       node-version: ${{ inputs.node-version }}
@@ -27,7 +27,7 @@ jobs:
 
   e2e:
     name: 🧪
-    uses: ./.github/workflows/run.yml
+    uses: cassiecascade/houseplant/.github/workflows/run.yml
     with:
       command: test:e2e
       node-version: ${{ inputs.node-version }}

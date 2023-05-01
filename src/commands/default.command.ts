@@ -8,7 +8,7 @@ import { CommandRunner, RootCommand } from 'nest-commander'
 
 @RootCommand({
   name: 'houseplant',
-  description: 'a set of tools for managing your typescript projects and repositories',
+  description: 'a set of tools for managing your typescript projects and repositories'
 })
 export class DefaultCommand extends CommandRunner {
   async run(): Promise<void> {

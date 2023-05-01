@@ -19,7 +19,7 @@ on:
 jobs:
   format:
     name: ☑️
-    uses: ./.github/workflows/run.yml
+    uses: cassiecascade/houseplant/.github/workflows/run.yml
     with:
       command: check:format
       node-version: ${{ inputs.node-version }}
@@ -27,7 +27,7 @@ jobs:
 
   lint:
     name: ☑️
-    uses: ./.github/workflows/run.yml
+    uses: cassiecascade/houseplant/.github/workflows/run.yml
     with:
       command: check:lint
       node-version: ${{ inputs.node-version }}
