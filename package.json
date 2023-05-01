@@ -1,0 +1,39 @@
+{
+  "name": "houseplant",
+  "version": "0.1.0",
+  "description": "a set of tools for managing your typescript projects and repositories",
+  "author": "Cassidy Spring <79487947+cassiecascade@users.noreply.github.com>",
+  "license": "MPL-2.0",
+  "homepage": "https://github.com/cassiecascade/houseplant#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cassiecascade/houseplant.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cassiecascade/houseplant/issues"
+  },
+  "bin": {
+    "houseplant": "./dist/houseplant.js"
+  },
+  "scripts": {
+    "prebuild": "ts-node src/houseplant.ts clean",
+    "prepack": "npm run build",
+    "build": "tsc -p tsconfig.build.json",
+    "start": "node dist/houseplant",
+    "lint": "sunbeams lint --fix",
+    "format": "sunbeams format",
+    "check:lint": "sunbeams lint",
+    "check:format": "sunbeams format --check",
+    "test:unit": "",
+    "test:e2e": ""
+  },
+  "dependencies": {
+    "@nestjs/common": "^9.4.0",
+    "nest-commander": "^3.6.2"
+  },
+  "devDependencies": {
+    "sunbeams": "^0.5.5",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  }
+}

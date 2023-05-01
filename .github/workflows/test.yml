@@ -1,0 +1,34 @@
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+name: houseplant / test
+
+on:
+  workflow_call:
+    inputs:
+      node-version:
+        description: node version to install
+        required: false
+        type: string
+      node-environment:
+        description: node environment to use
+        required: false
+        type: string
+
+jobs:
+  unit:
+    name: 🧪
+    uses: ./.github/workflows/run.yml
+    with:
+      command: test:unit
+      node-version: ${{ inputs.node-version }}
+      node-environment: ${{ inputs.node-environment }}
+
+  e2e:
+    name: 🧪
+    uses: ./.github/workflows/run.yml
+    with:
+      command: test:e2e
+      node-version: ${{ inputs.node-version }}
+      node-environment: ${{ inputs.node-environment }}

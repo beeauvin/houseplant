@@ -1,0 +1,42 @@
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+name: houseplant / run
+
+on:
+  workflow_call:
+    inputs:
+      command:
+        description: npm command to run
+        required: true
+        type: string
+      node-version:
+        description: node version to install
+        required: false
+        default: '18'
+        type: string
+      node-environment:
+        description: node environment to use
+        required: false
+        default: 'test'
+        type: string
+
+env:
+  NODE_ENV: ${{ inputs.node-environment }}
+
+jobs:
+  run:
+    name: 🪴 / run:${{ inputs.command }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: install
+        uses: ./.github/actions/install
+        with:
+          node-version: ${{inputs.node-version }}
+
+      - name: run:${{ inputs.command }}
+        run: npm run ${{ inputs.command }}
