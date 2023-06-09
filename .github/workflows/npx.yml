@@ -40,3 +40,4 @@ jobs:
 
       - name: npx:${{ inputs.command }}
         run: npx ${{ inputs.command }}
+        shell: bash

@@ -40,3 +40,4 @@ jobs:
 
       - name: run:${{ inputs.command }}
         run: npm run ${{ inputs.command }}
+        shell: bash

@@ -15,12 +15,16 @@ on:
         description: node environment to use
         required: false
         type: string
+      flags:
+        description: flags to pass to npm
+        required: false
+        type: string
 
 jobs:
   build:
     name: 🏗️
     uses: cassiecascade/houseplant/.github/workflows/run.yml@main
     with:
-      command: build
+      command: build  ${{ inputs.flags }}
       node-version: ${{ inputs.node-version }}
       node-environment: ${{ inputs.node-environment }}
