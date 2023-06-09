@@ -15,17 +15,13 @@ on:
         description: node environment to use
         required: false
         type: string
-      flags:
-        description: flags to pass to the command
-        required: false
-        type: string
 
 jobs:
   unit:
     name: 🧪
     uses: cassiecascade/houseplant/.github/workflows/run.yml@main
     with:
-      command: test:unit ${{ inputs.flags }}
+      command: test:unit
       node-version: ${{ inputs.node-version }}
       node-environment: ${{ inputs.node-environment }}
 
@@ -33,6 +29,6 @@ jobs:
     name: 🧪
     uses: cassiecascade/houseplant/.github/workflows/run.yml@main
     with:
-      command: test:e2e ${{ inputs.flags }}
+      command: test:e2e
       node-version: ${{ inputs.node-version }}
       node-environment: ${{ inputs.node-environment }}

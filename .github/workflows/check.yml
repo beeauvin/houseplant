@@ -15,17 +15,13 @@ on:
         description: node environment to use
         required: false
         type: string
-      flags:
-        description: flags to pass to the command
-        required: false
-        type: string
 
 jobs:
   format:
     name: ☑️
     uses: cassiecascade/houseplant/.github/workflows/run.yml@main
     with:
-      command: check:format ${{ inputs.flags }}
+      command: check:format
       node-version: ${{ inputs.node-version }}
       node-environment: ${{ inputs.node-environment }}
 
@@ -33,6 +29,6 @@ jobs:
     name: ☑️
     uses: cassiecascade/houseplant/.github/workflows/run.yml@main
     with:
-      command: check:lint ${{ inputs.flags }}
+      command: check:lint
       node-version: ${{ inputs.node-version }}
       node-environment: ${{ inputs.node-environment }}
